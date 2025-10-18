@@ -35,5 +35,26 @@ public class Numbers {
         return min;
     }
 
+    //Maximale Summe von n-1 Zahlen
+    public int getMaxSum() {
+        if (numbers.size() <= 1){
+            return 0;
+        }
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        return sum - getMinNumber();
+    }
 
+    public int getMinSum() {
+        if (numbers.size() <= 1){
+            return 0;
+        }
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
+        return sum - getMaxNumber();
+    }
 }
