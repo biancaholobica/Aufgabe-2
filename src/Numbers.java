@@ -1,19 +1,16 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Numbers {
-    private List<Integer> numbers = new ArrayList<Integer>();
+    private int[] numbers;
 
-    //constructor
-    public Numbers(List<Integer> inputNumbers) {
-        numbers = inputNumbers;
+    // Constructor
+    public Numbers(int[] inputNumbers) {
+        this.numbers = inputNumbers;
     }
 
     public int getMaxNumber() {
-        if (numbers.isEmpty()) {
+        if (numbers.length == 0) {
             return 0;
         }
-        int max = 0;
+        int max = numbers[0];
         for (int number : numbers) {
             if (number > max) {
                 max = number;
@@ -23,10 +20,10 @@ public class Numbers {
     }
 
     public int getMinNumber() {
-        if (numbers.isEmpty()) {
+        if (numbers.length == 0) {
             return 0;
         }
-        int min = numbers.get(0);
+        int min = numbers[0];
         for (int number : numbers) {
             if (number < min) {
                 min = number;
@@ -35,9 +32,9 @@ public class Numbers {
         return min;
     }
 
-    //Maximale Summe von n-1 Zahlen
+    // Maximale Summe von n-1 Zahlen
     public int getMaxSum() {
-        if (numbers.size() <= 1){
+        if (numbers.length <= 1) {
             return 0;
         }
         int sum = 0;
@@ -48,7 +45,7 @@ public class Numbers {
     }
 
     public int getMinSum() {
-        if (numbers.size() <= 1){
+        if (numbers.length <= 1) {
             return 0;
         }
         int sum = 0;
